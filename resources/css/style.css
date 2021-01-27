@@ -1,0 +1,775 @@
+/*------------------------------------------------*/
+/* BASIC SETUP */
+/*------------------------------------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+}
+
+html{ 
+    background: #fff;
+    color: #555;
+    font-family: 'Lato','Arial', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-rendering: optimizeLegibility;
+}
+
+.clearfix{
+    clear: both;
+}
+
+
+/*------------------------------------------------*/
+/* REUSABLE COMPONENTS */
+/*------------------------------------------------*/
+
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.box{
+    padding: 1%;
+}
+
+section{ 
+    padding: 80px 0;
+}
+
+h1, h2, h3{ 
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+
+/*---------  LINKS ----------- */
+
+
+a:link,
+a:visited{
+    color:#e67e22;
+    text-decoration: none;
+    border-bottom: 1px solid #e67e22;
+    padding-bottom: 1px;
+    transition: border-bottom .2s, color .2s;
+    -webkit-transition: border-bottom .2s, color .2s;
+    -moz-transition: border-bottom .2s, color .2s;
+    -ms-transition: border-bottom .2s, color .2s;
+    -o-transition: border-bottom .2s, color .2s;
+}
+
+a:hover,
+a:active{
+    color:#555;
+    border-bottom: 1px solid transparent;
+}
+
+
+/*---------  HEADINGS ----------- */
+
+h1{
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2{
+    font-size: 180%;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h2:after{
+    content: " ";
+    display: block;
+    margin: 30px auto 30px auto;
+    width: 100px;
+    height: 2px;
+    background-color: #e67e22;
+}
+
+h3{
+    font-size:110%;
+    margin-bottom: 15px;
+}
+
+
+/*---------  PARAGRAPHS ----------- */
+
+.long-para{
+    line-height: 145%;
+    max-width: 70%;
+    margin-left:15%;
+}
+
+.box p{
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/*---------  ICONS ----------- */
+
+.icon-big{
+    font-size: 350%;
+    color: #e67e22;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.icon-small{
+    font-size: 120%;
+    color: #e67e22;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 120%;
+    margin:-2px 0 0 0; 
+    margin-right: 10px;
+}
+
+
+/*------------------------------------------------*/
+/* HEADER */
+/*------------------------------------------------*/
+
+
+header {
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) , url(img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.hero-text-box{
+    max-width: 1140px;;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    padding: 0 1%;
+}
+
+.logo-white, .logo-dark{
+    float: left;
+    width: auto;
+    max-height: 100px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.logo-dark{ 
+    display: none;
+}
+
+.logo-white{ 
+    display: block;
+}
+
+
+/* ===  main nav  === */
+
+.main-nav{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 45px;
+}
+
+.main-nav li{
+     margin-right:40px;
+     list-style:none;
+}
+
+.main-nav li:last-child{
+    margin-right: 0;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding:8px 0;
+    text-decoration: none;
+    color: #fff;
+    font-size: 90%;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: border 0.2s;
+    -webkit-transition: border 0.2s;
+    -moz-transition: border 0.2s;
+    -ms-transition: border 0.2s;
+    -o-transition: border 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{ 
+    border-bottom:2px solid #e67e22;
+}
+
+
+/* === Mobile navigation == */
+.mobile-nav-icon {
+    display: none;
+    cursor: pointer;
+    margin-top: 30px;
+    float: right;
+}
+
+.mobile-nav-icon ion-icon {
+    color: #fff;
+    font-size: 200%;
+}
+
+.sticky .mobile-nav-icon ion-icon{ color: #333; }
+    
+.sticky .mobile-nav-icon {
+        margin-top: 15px;
+    }
+
+
+/* ===  sticky menu  === */
+
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: rgba(255, 255, 255);
+    box-shadow: 0 0 5px 5px rgba(0,0,0,.05);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.sticky .main-nav{
+    margin-top: 20px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited{
+    color: #333;
+}
+
+.sticky .logo-white{
+    display: none;
+}
+
+.sticky .logo-dark{
+    display: block;
+    max-height: 50px;
+    margin: 5px 0;
+}
+
+
+/*------------------------------------------------*/
+/* BUTTONS */
+/*------------------------------------------------*/
+
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    -ms-border-radius: 200px;
+    -o-border-radius: 200px;
+    transition: background-color 0.2s, color 0.2s, border 0.2s ;
+    -webkit-transition: background-color 0.2s, color 0.2s, border 0.2s ;
+    -moz-transition: background-color 0.2s, color 0.2s, border 0.2s ;
+    -ms-transition: background-color 0.2s, color 0.2s, border 0.2s ;
+    -o-transition: background-color 0.2s, color 0.2s, border 0.2s ;
+}
+
+.btn:active,
+.btn:hover,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+    border:1px solid #cf6d17;
+    background: #cf6d17;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type="submit"]{
+    background-color: #e67e22;
+    border:1px solid #e67e22;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.btn-full:active,
+.btn-full:hover,
+input[type="submit"]:active,
+input[type="submit"]:hover {
+    border:1px solid #cf6d17;
+    background: #cf6d17;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border:2px solid #e67e22;
+    color: #e67e22;
+}
+
+.btn-ghost:active,
+.btn-ghost:hover {
+    background-color: #cf6d17;
+    border:2px solid #cf6d17;
+    color: #fff;
+}
+
+
+/*------------------------------------------------*/
+/* FEATURES */
+/*------------------------------------------------*/
+
+.section-features .long-para{
+    margin-bottom: 30px;
+}
+
+
+/*------------------------------------------------*/
+/* MEALS */
+/*------------------------------------------------*/
+
+
+.section-meals{ 
+    padding: 0;
+}
+
+.meals-showcase{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.meals-showcase li{
+    list-style: none;
+    max-width: 25%;
+    display: block;
+    width: 100%;
+}
+
+.meal-photo{
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.meal-photo img{
+    width: 100%;
+    opacity: 0.7;
+    transition: transform .3s, opacity .3s;
+    transform: scale(1.20);
+    -webkit-transform: scale(1.20);
+    -moz-transform: scale(1.20);
+    -ms-transform: scale(1.20);
+    -o-transform: scale(1.20);
+    -webkit-transition: transform .3s, opacity .3s;
+    -moz-transition: transform .3s, opacity .3s;
+    -ms-transition: transform .3s, opacity .3s;
+    -o-transition: transform .3s, opacity .3s;
+}
+
+.meal-photo img:hover{
+    opacity: 1;
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
+
+
+
+/*------------------------------------------------*/
+/* HOW IT WORKS */
+/*------------------------------------------------*/
+
+
+.section-steps{
+    background-color: #f5f5f5;
+}
+
+
+.step-box:first-child{
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+}
+
+.step-box:last-child{
+    margin-top: 80px;
+    padding-left: 3%;
+}
+
+
+.app-screen{
+    max-width: 45%;
+    width: 100%;
+}
+
+.work-step{
+    margin-bottom: 50px;
+}
+
+.work-step div{
+    /* display: inline-block; */
+    float: left;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    margin-right: 25px;
+    border-radius: 50%;
+    line-height: 35px;
+    padding: 5px;
+    font-size: 140%;
+    overflow: hidden;
+    background-color: transparent;
+    transition: background-color .2s;
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    -ms-transition: background-color .2s;
+    -o-transition: background-color .2s;
+}
+
+.work-step > div:hover {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.work-step:last-of-type{
+    margin-bottom: 80px;
+}
+
+.btn-app:link,
+.btn-app:visited{
+    border:none;
+}
+
+.btn-app img{
+    height: 60px;
+    width: auto;
+    margin-right: 10px;
+}
+
+
+/*------------------------------------------------*/
+/* CITIES */
+/*------------------------------------------------*/
+
+
+.box img{
+    width: 100%;
+    height: auto;
+    margin-right: 10px;
+    margin-bottom: 5px;;
+}
+
+.city-feature{
+    margin-bottom: 5px;
+}
+
+
+
+/*------------------------------------------------*/
+/* TESTIMONIALS */
+/*------------------------------------------------*/
+
+
+.section-testimonials{
+    background-image: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(img/back-customers-min.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+blockquote{
+    padding: 2%;
+    font-style: italic;
+    line-height: 140%;
+    position: relative;
+    margin-top: 50px;
+}
+
+blockquote:before{
+    content: "\201C";
+    font-size: 400%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+
+cite{
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+
+cite img{
+    height: 45px;
+    vertical-align: middle;
+    margin-right: 10px;;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+
+
+/*------------------------------------------------*/
+/* SIGN UP */
+/*------------------------------------------------*/
+
+.section-plans{
+    background: #f4f4f4;
+}
+
+.plan-box{
+    background: #fff;
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 3px #efefef;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.plan-box > div{
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.plan-price{
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.plan-price span{
+    font-size: 30%;
+   font-weight: 300;
+}
+
+.price-per-meal{
+    font-size:80%;
+}
+
+.plan-box ul{
+    list-style: none;
+}
+
+.plan-box ul li {
+    padding: 5px;
+}
+
+.plan-box > div:first-child{
+    background: #fcfcfc;
+}
+
+.plan-box > div:last-child {
+    text-align: center;
+    border: none;
+}
+
+
+
+
+/*------------------------------------------------*/
+/* FORM */
+/*------------------------------------------------*/
+
+
+.contact-form{
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+input[type=text], input[type=email], textarea, select {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 7px 15px;
+    border-radius: 3px;
+}
+
+textarea{
+    height: 100px;
+}
+
+input[type="checkbox"]{
+    margin: 10px 5px 10px 0;
+}
+
+
+
+/*------------------------------------------------*/
+/* FOOTER */
+/*------------------------------------------------*/
+
+
+
+footer{
+    background-color: #1e1e1e;
+    padding: 50px 0;
+    font-size: 90%;
+}
+
+ul.footer-nav,
+ul.social-link {
+    list-style: none;
+    display: flex;
+}
+
+ul.social-link {
+    justify-content: flex-end;
+}
+
+ul.footer-nav li,
+ul.social-link li {
+    margin-right: 20px;
+}
+
+ul.footer-nav li a:link,
+ul.footer-nav li a:visited,
+ul.social-link li a:link,
+ul.social-link li a:visited {
+    color: #888;
+    border: none;
+    transition: color .2s;
+    -webkit-transition: color .2s;
+    -moz-transition: color .2s;
+    -ms-transition: color .2s;
+    -o-transition: color .2s;
+}
+
+
+ul.social-link li a:link,
+ul.social-link li a:visited {
+    font-size: 160%;
+}
+
+ion-icon[name="logo-facebook"],
+ion-icon[name="logo-twitter"],
+ion-icon[name="logo-linkedin"],
+ion-icon[name="logo-instagram"]{
+    transition: color .2s;
+    -webkit-transition: color .2s;
+    -moz-transition: color .2s;
+    -ms-transition: color .2s;
+    -o-transition: color .2s;
+}
+
+ion-icon[name="logo-facebook"]:active,
+ion-icon[name="logo-facebook"]:hover {
+    color:#3b5999;
+}
+
+ion-icon[name="logo-linkedin"]:active,
+ion-icon[name="logo-linkedin"]:hover {
+    color:#0077B5;
+}
+
+ion-icon[name="logo-twitter"]:hover,
+ion-icon[name="logo-twitter"]:active {
+    color:#55acee;
+}
+
+ion-icon[name="logo-instagram"]:hover,
+ion-icon[name="logo-instagram"]:active {
+    color:#e4405f;
+}
+
+ul.footer-nav li a:active,
+ul.footer-nav li a:hover {
+    color: #ddd;
+}
+
+ul.footer-nav li:last-child,
+ul.social-link li:last-child {
+    margin: 0;
+}
+
+footer p{
+    color: #888;
+    text-align: center;
+    font-size: 90%;
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+
+.scrollToTop{
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    display: none;
+    background-color: #e67e22;
+    line-height: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+}
+
+.scrollToTop.show{
+    opacity: 1;
+    display: block;
+    transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+}
+
+.scrollToTop ion-icon{
+    color: #fff;
+}
+
+/*------------------------------------------------*/
+/* Animations */
+/*------------------------------------------------*/
+
+.section{
+    opacity: 0;
+}
+
+
+.section.animated{
+    opacity: 1;
+    animation-duration: 1s;
+}
